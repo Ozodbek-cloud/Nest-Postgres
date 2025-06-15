@@ -1,10 +1,10 @@
 import { DataTypes } from "sequelize";
-import { Model, Table, Column, ForeignKey, BelongsTo} from "sequelize-typescript";
+import { Model, Table, Column, ForeignKey, BelongsTo } from "sequelize-typescript";
 import { PostModel } from "./posts.model";
 
 @Table
 
-export class CommentModel extends Model{
+export class CommentModel extends Model {
     @Column({
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -15,7 +15,7 @@ export class CommentModel extends Model{
     @Column({
         type: DataTypes.STRING
     })
-    test: string
+    text: string
 
     @ForeignKey(() => PostModel)
     post_id: number
